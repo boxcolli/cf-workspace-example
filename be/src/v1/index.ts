@@ -1,5 +1,12 @@
-import { Hono } from "hono";
+import { OpenAPIHono } from '@hono/zod-openapi'
+import hello from "./hello"
 
-const app = new Hono<{ Bindings: Env }>()
+const app = new OpenAPIHono<{ Bindings: Env }>()
 
-export default app
+app.route("/hello", hello.app)
+
+const api = {
+  hello: hello.api,
+}
+
+export default { app, api }

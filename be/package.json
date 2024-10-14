@@ -1,13 +1,17 @@
 {
   "name": "be",
+  "exports": {
+    "./v1": "./src/v1/index.ts"
+  },
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy --minify",
     "cf-typegen": "wrangler types --env-interface CloudflareBindings"
   },
   "dependencies": {
-    "hono": "^4.6.3",
-    "@org/prisma": "workspace:*"
+    "@hono/zod-openapi": "^0.16.4",
+    "@org/prisma": "workspace:*",
+    "hono": "^4.6.3"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20241004.0",

@@ -1,17 +1,17 @@
 {
-  "name": "@org/prisma",
+  "name": "@org/api",
   "module": "index.ts",
-  "main": "index.ts",
   "type": "module",
+  "exports": {
+    "./*": "./src/*.ts"
+  },
   "devDependencies": {
-    "@types/bun": "latest",
-    "prisma": "5.20.0"
+    "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@prisma/client": "5.20.0",
     "be": "workspace:*"
   }
 }
